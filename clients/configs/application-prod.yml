@@ -1,0 +1,218 @@
+LOG_PATH: /opt/crm/logs
+abs:
+    abs-url: https://h2h.creditural.ru:443/api/1.0
+    client-code: dfdhftre
+    client-id: 152249
+    client-source: PROSTO
+    status-check:
+        cron: 0 0/5 * * * *
+    url: https://h2h.creditural.ru:443/api/1.0
+    partner_id: 161195
+    partner_user: apibank
+    partner_pass: G4cZSODt
+account:
+    application:
+        table:
+            view:
+                title: CRM | Просто Банк
+app:
+    email-back: maria.lavrova@creditural.ru,liudmila.tretiakova@creditural.ru
+    email-debug: esupport@apibank.club
+    email-delivery: prostob@corp.bcexpress.ru
+    email-front: chel@creditural.ru,a.glazunov@apibank.club,u.ayubova@apibank.club
+    email-sender-name: notify@prostobank.online
+    kontur:
+        fake: false
+    lk:
+        url: https://process.prostobank.online/account/application/
+    p550:
+        fake: false
+    url: https://process.prostobank.online/crm/applications/
+    base-url: https://process.prostobank.online/crm/
+    tss-url: http://dbo.apibank.club/tss/
+artemis:
+    broker-url: tcp://192.168.70.14:61618
+    login: admin
+    password: admin
+bigdata:
+    kyc:
+        auth-url: http://192.168.70.34:8084/auth/v5.9/authenticate-by-pass
+        base-url: http://192.168.70.34:8084/api
+        'on': 1
+dbo:
+    enable: false
+    host: https://stage-0.apibank.club
+    apiUrl: /dbo-api
+    usersUrl: /users
+    queue:
+        enabled: false
+    checkOld:
+        enabled: false
+        cron: 0 0 */1 ? * *
+dboLink:
+    url: https://lk.prostobank.online/
+dev:
+    confiramtion:
+        code: 1233
+        code.switch: 0
+egrul:
+    file:
+        parser:
+            service:
+                address: http://127.0.0.1:9000/parser/api.php
+emarsys:
+    api:
+        key: hyNQtKMVBTZCPyggqvqd
+        url: https://api.emarsys.net/api
+        user: apibank002
+expiredpassports:
+    cron: 0 0 3 ? * *
+    enabled: true
+    httpsurl: https://guvm.mvd.ru/upload/expired-passports/list_of_expired_passports.csv.bz2
+fns:
+    db: jdbc:postgresql://192.168.70.25:5432/egr
+    password: KGFori3wer
+    username: egrreader
+ftp:
+    baseUrl: http://data.nalog.ru/opendata/7707329152-sshr/
+    host: 192.168.70.38
+    password: ftp-user
+    port: 21
+    userName: ftp-user
+google:
+    analytics:
+        event:
+            category: crm
+        id: UA-123670260-1
+        type: event
+        url: http://www.google-analytics.com/collect
+        version: 1
+inbound-mail:
+    enabled: true
+    failed-folder: TEST-FAIL
+    fixedDelay: 20000
+    maxMessagesPerPoll: 3
+    success-folder: done
+    timeout: 10000
+    url: imaps://client-docs:ohgoothaeZ5Uo5ki@mail.apibank.online/INBOX
+ipwhois:
+    enabled: true
+is:
+    utm:
+        active: 1
+
+keycloak:
+    enabled: true
+    auth-server-url: https://process.prostobank.online/auth
+    realm: ProstoBank
+    resource: telemarket
+    credentials:
+        secret: 84bc744a-0211-4f84-97de-8854081b95c5
+    ssl-required: external
+    principal-attribute: preferred_username
+
+
+kontur:
+    api-key: 56ed04b3-6e3c-4ab5-97b5-b217de57603c
+    auth-login: a.chernikov@gpbdigital.com
+    auth-password: apiBank2018
+    auth-url: https://api.kontur.ru/auth/v5.11/authenticate-by-pass
+    base-url: https://kyc.kontur.ru/api
+    company:
+        info:
+            base-url: https://focus-api.kontur.ru/api3
+    retreive:
+        info:
+            'on': 0
+logging:
+    level:
+        org:
+            springframework:
+                integration:
+                    mail:
+                        ImapMailReceiver: WARN
+management:
+    endpoint:
+        health:
+            show-details: always
+server:
+    port: 38081
+    servlet:
+        context-path: /crm
+simple:
+    branch: 1
+    crypto-id: 184134
+    host: api.internal.apibank.club
+    imsi:
+        check:
+            period:
+                of:
+                    time: 1800000
+        notification:
+            users: a.chernikov@apibank.club,ulyana.emelyanova@creditural.ru,prostobank@creditural.ru
+    jdbc-driver-class-name: org.postgresql.Driver
+    jdbc-password: aifiequauvee6IG5
+    jdbc-url: jdbc:postgresql://psql01.kub.in.apibank.club:5432/isimple
+    jdbc-username: mnt
+    login: oper
+    password: oper
+    prosto-crypto-id: 184134
+    prosto-group-name: Просто
+    url: http://api.internal.apibank.club
+sms:
+    attempts:
+        max: 5
+    blacklisted: 9262499598
+    login: gpbdigi3
+    partner: Prostobank
+    password: Q5ePWSE8
+    time:
+        gap: 60
+    uri: http://gate10.mfms.ru:12105/gpbdigital/connector3/service/
+spring:
+    datasource:
+        driverClassName: org.postgresql.Driver
+        password: yaeXooM8looGho2l
+        url: jdbc:postgresql://192.168.70.9/prostobankdb
+        username: prostobank
+    jpa:
+        hibernate:
+            ddl-auto: validate
+    mail:
+        host: mail.apibank.online
+        port: 587
+        username: apibank.local/notify
+        password: V1x4i@ZAmQDy2HLx
+        properties:
+            mail:
+                smtp:
+                    starttls:
+                        enable: true
+    main:
+        allow-bean-definition-overriding: true
+    servlet:
+        multipart:
+            max-file-size: 20MB
+statistic:
+    api:
+        have: +
+        none: '-'
+storage:
+    url: https://process.prostobank.online/contentstorage
+    host: process.prostobank.online
+token:
+    encryptor:
+        seed: 4818ca36-aac1-4129-95b2-5fbda765a5be
+statemachine:
+    clear_context: 0 0 */1 * * *
+toggle:
+    features:
+        -
+            name: ai_predict
+            enabled: false
+
+ai:
+    url-init-scoring: http://192.168.70.15:8093/crm_ai/init_train
+    url-get-result: http://192.168.70.15:8093/crm_ai/predict_proba
+    scheduler: 0 0 0/1 * * ?
+    page-size: 1

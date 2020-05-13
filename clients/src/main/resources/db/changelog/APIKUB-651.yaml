@@ -1,0 +1,33 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: o.rolik
+    changes:
+    - createTable:
+            columns:
+            - column:
+                name: id
+                type: bigint
+            - column:
+                name: created_at
+                type: timestamp
+            - column:
+                name: current_status
+                type: varchar(255)
+            - column:
+                name: old_status
+                type: varchar(255)
+            - column:
+                name: app_id
+                type: bigint
+            tableName: status_history_item
+- changeSet:
+    id: 2
+    author: o.rolik
+    changes:
+    - addColumn:
+        columns:
+            - column:
+                name: event_initiator
+                type: varchar(1024)
+        tableName: status_history_item

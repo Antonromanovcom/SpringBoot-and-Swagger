@@ -1,0 +1,17 @@
+mail:
+    host: mail.apibank.online
+    port: 587
+    username: apibank.local/notify
+    password: V1x4i@ZAmQDy2HLx
+
+    defaultRecipient: notify@apibank.online
+    sentFrom: notify@apibank.online
+    messageText: Message text
+    subject: Email subject
+
+    properties:
+        mail:
+            smtp:
+                starttls:
+                    enable: true
+#            debug: true

@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: a.murzin
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            relativeToChangelogFile: true
+            stripComments: true
+            path: ./sql/createNewStatuses.sql
+            splitStatements: true

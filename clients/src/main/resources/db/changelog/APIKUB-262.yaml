@@ -1,0 +1,20 @@
+databaseChangeLog:
+    - changeSet:
+          id: APIKUB-262
+          author: s.gridin
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                              name: series
+                              type: smallint
+                        - column:
+                              name: number
+                              type: int
+                    tableName: expired_passports
+              - addNotNullConstraint:
+                  columnName: series
+                  tableName: expired_passports
+              - addNotNullConstraint:
+                  columnName: number
+                  tableName: expired_passports

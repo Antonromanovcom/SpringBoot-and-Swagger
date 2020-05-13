@@ -1,0 +1,82 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: d.kirilenko
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: business_type
+                  type: text
+              - column:
+                  name: contract_type
+                  type: text
+              - column:
+                  name: inn_of_supplier
+                  type: text
+              - column:
+                  name: inn_of_consumer
+                  type: text
+              - column:
+                  name: taxation_type
+                  type: text
+              - column:
+                  name: monthly_revenue
+                  type: text
+              - column:
+                  name: real_company_size
+                  type: text
+              - column:
+                  name: is_chief_accountant_present
+                  type: text
+              - column:
+                  name: official_site
+                  type: text
+              - column:
+                  name: registration_address
+                  type: text
+              - column:
+                  name: real_location_address
+                  type: text
+              - column:
+                  name: account_no_sign_permission
+                  type: text
+            tableName: account_application
+  - changeSet:
+      id: 2
+      author: m.romanenkov
+      changes:
+        - dropColumn:
+            columnName: contract_type
+            tableName: account_application
+        - dropColumn:
+            columnName: inn_of_supplier
+            tableName: account_application
+        - dropColumn:
+            columnName: inn_of_consumer
+            tableName: account_application
+        - dropColumn:
+            columnName: taxation_type
+            tableName: account_application
+        - dropColumn:
+            columnName: monthly_revenue
+            tableName: account_application
+        - dropColumn:
+            columnName: registration_address
+            tableName: account_application
+        - dropColumn:
+            columnName: real_location_address
+            tableName: account_application
+  - changeSet:
+      id: 3
+      author: m.romanenkov
+      changes:
+        - addColumn:
+            tableName: account_application
+            columns:
+              - column:
+                  name: license
+                  type: boolean not null default false
+              - column:
+                  name: agent
+                  type: boolean not null default false

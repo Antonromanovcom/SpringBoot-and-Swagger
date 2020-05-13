@@ -1,0 +1,11 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ilya
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: event_initiator
+            type: varchar(1024)
+        tableName: history_item

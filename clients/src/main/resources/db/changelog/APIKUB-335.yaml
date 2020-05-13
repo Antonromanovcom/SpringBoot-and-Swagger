@@ -1,0 +1,83 @@
+databaseChangeLog:
+- changeSet:
+    id: APIKUB-335
+    author: ilya
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: id
+            type: bigint
+        - column:
+            name: created
+            type: timestamp
+        tableName: imsi_notification
+    - createTable:
+        columns:
+        - column:
+            name: id
+            type: bigint
+        - column:
+            name: phone_number
+            type: varchar(30)
+        - column:
+            name: old_imsi
+            type: varchar(36)
+        - column:
+            name: current_imsi
+            type: varchar(36)
+        - column:
+            name: tax_number
+            type: varchar(30)
+        - column:
+            name: full_name
+            type: varchar(255)
+        - column:
+            name: validation_date
+            type: timestamp
+        - column:
+            name: notification_id
+            type: bigint
+        tableName: imsi_notification_phone_number_owner
+    - createTable:
+        columns:
+        - column:
+            name: id
+            type: bigint
+        - column:
+            name: name
+            type: varchar(30)
+        - column:
+            name: email
+            type: varchar(255)
+        tableName: imsi_notification_recipient_user
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: insert into imsi_notification_recipient_user (id, name, email) values (NEXTVAL('hibernate_sequence'), 'КУБ', 'prostobank@creditural.ru')
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: insert into imsi_notification_recipient_user (id, name, email) values (NEXTVAL('hibernate_sequence'), 'Ульяна Емельянова', 'ulyana.emelyanova@creditural.ru')
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: insert into imsi_notification_recipient_user (id, name, email) values (NEXTVAL('hibernate_sequence'), 'Антон Черников', 'a.chernikov@apibank.club')
+
+- changeSet:
+      id: 2
+      author: ilya
+      changes:
+      - dropColumn:
+            columnName: validation_date
+            tableName: imsi_notification_phone_number_owner
+
+- changeSet:
+    id: 3
+    author: ilya
+    changes:
+    - dropTable:
+        tableName: imsi_notification_recipient_user

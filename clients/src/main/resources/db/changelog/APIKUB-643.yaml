@@ -1,0 +1,31 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ilya
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: to_list
+            type: boolean
+        tableName: city
+
+- changeSet:
+      id: 2
+      author: ilya
+      changes:
+      - sql:
+            dbms: postgresql
+            endDelimiter: \nGO
+            splitStatements: true
+            sql: update city set to_list = true
+
+- changeSet:
+    id: 3
+    author: ilya
+    changes:
+    - sql:
+          dbms: postgresql
+          endDelimiter: \nGO
+          splitStatements: true
+          sql: insert into city (id, name, to_list) values (NEXTVAL('hibernate_sequence'), 'Неизвестно', false)

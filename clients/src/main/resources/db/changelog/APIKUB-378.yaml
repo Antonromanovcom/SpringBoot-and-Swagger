@@ -1,0 +1,36 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ilya
+    changes:
+    - createTable:
+        tableName: utm
+        columns:
+        - column:
+            name: id
+            type: bigint
+        - column:
+            name: utm_source
+            type: varchar(255)
+        - column:
+            name: utm_campaign
+            type: varchar(255)
+        - column:
+            name: utm_content
+            type: varchar(255)
+        - column:
+            name: utm_medium
+            type: varchar(255)
+        - column:
+            name: utm_term
+            type: varchar(255)
+- changeSet:
+    id: 2
+    author: ilya
+    changes:
+    - addColumn:
+        tableName: account_application
+        columns:
+        - column:
+            name: utm_id
+            type: bigint

@@ -1,0 +1,81 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ilya
+    changes:
+    - createTable:
+        tableName: founder
+        columns:
+        - column:
+            name: id
+            type: bigint
+        - column:
+            name: fio
+            type: varchar(255)
+        - column:
+            name: inn
+            type: varchar(30)
+        - column:
+            name: ogrn
+            type: varchar(30)
+        - column:
+            name: client
+            type: bigint
+- changeSet:
+    id: 2
+    author: ilya
+    changes:
+    - addColumn:
+        tableName: account_application
+        columns:
+        - column:
+            name: p550check_head
+            type: varchar(255)
+        - column:
+            name: p550check_founder
+            type: varchar(255)
+- changeSet:
+    id: 3
+    author: ilya
+    changes:
+    - addColumn:
+        tableName: account_application
+        columns:
+        - column:
+            name: head_tax_number
+            type: varchar(30)
+        - column:
+            name: founders
+            type: bigint
+- changeSet:
+    id: 4
+    author: ilya
+    changes:
+    - renameColumn:
+        newColumnName: application_id
+        oldColumnName: client
+        tableName: founder
+- changeSet:
+    id: 5
+    author: ilya
+    changes:
+    - dropColumn:
+        columnName: application_id
+        tableName: founder
+- changeSet:
+    id: 6
+    author: ilya
+    changes:
+    - dropColumn:
+        columnName: founders
+        tableName: account_application
+- changeSet:
+    id: 7
+    author: ilya
+    changes:
+    - addColumn:
+        tableName: founder
+        columns:
+        - column:
+            name: application_id
+            type: bigint

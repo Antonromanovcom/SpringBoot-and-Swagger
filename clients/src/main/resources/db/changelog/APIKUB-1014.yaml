@@ -1,0 +1,30 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: o.rolik
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: id
+            type: bigint
+        - column:
+            name: start_at
+            type: timestamp
+        - column:
+            name: manager
+            type: varchar(255)
+        - column:
+            name: app_id
+            type: bigint
+        tableName: start_work
+- changeSet:
+    id: 2
+    author: o.rolik
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: status
+            type: varchar(255)
+        tableName: start_work

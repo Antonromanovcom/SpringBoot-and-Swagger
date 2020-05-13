@@ -1,0 +1,38 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: m.romanenkov
+      changes:
+        - createTable:
+            tableName: tss_sign
+            columns:
+              - column:
+                  name: request_id
+                  type: UUID
+              - column:
+                  name: status
+                  type: varchar(255)
+              - column:
+                  name: confirm_type
+                  type: varchar(255)
+              - column:
+                  name: created_date
+                  type: timestamp
+              - column:
+                  name: client_id
+                  type: bigint
+              - column:
+                  name: attachment_id
+                  type: bigint
+              - column:
+                  name: signature_base64
+                  type: text
+              - column:
+                  name: sign_date
+                  type: timestamp
+              - column:
+                  name: sign_public_id
+                  type: varchar(255)
+              - column:
+                  name: error
+                  type: text

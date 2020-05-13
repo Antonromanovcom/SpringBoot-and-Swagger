@@ -1,0 +1,58 @@
+databaseChangeLog:
+- changeSet:
+    id: APIKUB-357
+    author: ilya
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: id
+            type: bigint
+        - column:
+            name: outer_connector
+            type: varchar(20)
+        - column:
+            name: http_status
+            type: int
+        - column:
+            name: path
+            type: varchar(255)
+        - column:
+            name: method
+            type: varchar(255)
+        #        - column:
+        #            name: client_ip
+        #            type: varchar(50)
+        - column:
+            name: request_headers
+            type: TEXT
+        - column:
+            name: response_headers
+            type: TEXT
+        - column:
+            name: arguments
+            type: TEXT
+        #        - column:
+        #            name: exceptions
+        #            type: TEXT
+        - column:
+            name: uid
+            type: varchar(50)
+        - column:
+            name: request_body
+            type: TEXT
+        - column:
+            name: response_body
+            type: TEXT
+        tableName: logging_record
+- changeSet:
+    id: 2
+    author: ilya
+    changes:
+    - sqlFile:
+        dbms: postgresql
+        encoding: utf8
+        relativeToChangelogFile: true
+        stripComments: true
+        path: ./sql/logback_script.sql
+        splitStatements: true

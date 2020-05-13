@@ -1,0 +1,48 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: o.rolik
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: id
+            type: uuid
+        - column:
+            name: login
+            type: varchar(255)
+        - column:
+            name: first_name
+            type: varchar(255)
+        - column:
+            name: second_name
+            type: varchar(255)
+        - column:
+            name: last_name
+            type: varchar(255)
+        - column:
+            name: city
+            type: varchar(255)
+        - column:
+            name: region
+            type: varchar(255)
+        - column:
+            name: phone
+            type: varchar(255)
+        - column:
+            name: last_online
+            type: timestamptz
+        tableName: manager
+    - addUniqueConstraint:
+        - columnNames: login
+        - constraintName: login_column_constraint
+        - tableName: manager
+    - addNotNullConstraint:
+          - columnName: id
+          - tableName: manager
+    - addNotNullConstraint:
+          - columnName: login
+          - tableName: manager
+    - addPrimaryKey:
+          - columnNames: id
+          - tableName: manager

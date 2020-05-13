@@ -1,0 +1,10 @@
+databaseChangeLog:
+- changeSet:
+    id: APIKUB-1257_fix
+    author: a.murzin
+    changes:
+    - sql:
+          dbms: postgresql
+          endDelimiter: \nGO
+          splitStatements: true
+          sql: ALTER TABLE attachment ALTER COLUMN migrated SET DEFAULT FALSE;

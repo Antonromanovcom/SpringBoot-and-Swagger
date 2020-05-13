@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: o.rolik
+      changes:
+        - addColumn:
+            tableName: account_application
+            columns:
+              - column:
+                  name: contragents_recip
+                  type: text
+  - changeSet:
+      id: 2
+      author: o.rolik
+      changes:
+        - modifyDataType:
+            columnName: contragents
+            newDataType: text
+            tableName: account_application

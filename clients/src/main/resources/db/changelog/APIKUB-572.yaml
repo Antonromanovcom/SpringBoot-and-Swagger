@@ -1,0 +1,56 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: o.rolik
+    changes:
+    - addColumn:
+        tableName: account_application
+        columns:
+        - column:
+            name: sent
+            type: boolean
+- changeSet:
+    id: 2
+    author: o.rolik
+    changes:
+    - addColumn:
+        tableName: account_application
+        columns:
+        - column:
+            name: not_sent_on_time
+            type: boolean
+- changeSet:
+    id: 3
+    author: o.rolik
+    changes:
+    - addColumn:
+        tableName: account_application
+        columns:
+        - column:
+            name: sent_date
+            type: date
+- changeSet:
+    id: 4
+    author: o.rolik
+    changes:
+    - addColumn:
+        tableName: account_application
+        columns:
+        - column:
+            name: not_sent_date
+            type: date
+
+- changeSet:
+    id: 5
+    author: o.rolik
+    changes:
+    - addNotNullConstraint:
+        columnDataType: boolean
+        columnName: sent
+        defaultNullValue: false
+        tableName: account_application
+    - addNotNullConstraint:
+        columnDataType: boolean
+        columnName: not_sent_on_time
+        defaultNullValue: false
+        tableName: account_application

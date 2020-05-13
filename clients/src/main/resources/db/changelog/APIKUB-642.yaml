@@ -1,0 +1,10 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: o.rolik
+    changes:
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: insert into city (id, name) values (NEXTVAL('hibernate_sequence'), 'Краснодар')

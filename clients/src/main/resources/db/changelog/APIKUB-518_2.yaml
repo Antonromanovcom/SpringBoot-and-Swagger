@@ -1,0 +1,20 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: a.murzin
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: id
+            type: bigserial
+        - column:
+            name: time
+            type: timestamp
+        - column:
+            name: username
+            type: varchar(255)
+        - column:
+            name: functional_type
+            type: varchar(255)
+        tableName: smartengine_usage

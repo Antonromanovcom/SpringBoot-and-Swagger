@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: a.murzin
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: functional_type
+                  type: varchar(128)
+            tableName: attachment

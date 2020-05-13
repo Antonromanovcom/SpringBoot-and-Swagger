@@ -1,0 +1,41 @@
+databaseChangeLog:
+    - changeSet:
+          id: APIKUB-2261
+          author: a.romanov
+          changes:
+              - createTable:
+                    columns:
+                        - column:
+                            name: id
+                            type: bigint
+                        - column:
+                            name: tariff_id
+                            type: int
+                        - column:
+                            name: inn_of_consumer
+                            type: text
+                        - column:
+                            name: consumer_name
+                            type: text
+                        - column:
+                            name: kpp_of_consumer
+                            type: varchar(9)
+                        - column:
+                            name: account_number
+                            type: varchar(255)
+                        - column:
+                            name: bank_name
+                            type: varchar(512)
+                        - column:
+                            name: bik
+                            type: varchar(9)
+                        - column:
+                            name: corr_account
+                            type: varchar(255)
+                        - column:
+                            name: amount
+                            type: numeric
+                        - column:
+                            name: description
+                            type: varchar(1024)
+                    tableName: payment_order_details

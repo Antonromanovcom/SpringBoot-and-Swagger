@@ -1,0 +1,29 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+    <style>
+        * {font-family: Arial Unicode MS}
+        table {border-collapse: collapse;}
+        h2, h3 {text-align: center;}
+    </style>
+
+    </head>
+    <body>
+        <h2>Протокол подключения Клиента в сиcтеме iSimpleBank2.0</h2>
+        <h3>Банк «КУБ» (АО)</h3>
+
+        <br/>
+
+        Наименование организации <b>[[${fullName}]]</b><br/>
+        ИНН организации <b>[[${taxNumber}]]</b><br/>
+        № счета организации <b>[[${accountNumber}]]</b><br/>
+        Идентификатор сертификата <b>[[${uid}]]</b><br/>
+        Дата и время создания сертификата <b>[[${createStamp}]]</b>
+        <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>
+        <div style="float: right;margin-top: 300px;">
+            <p>Администратор системы iSimpleBank 2.0</p>
+            <p><u>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</u> <u>&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;</u></p>
+            <p>Должность&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;Ф.И.О.</p>
+            <p>Оттиск печати Банка</p>
+        </div>
+    </body>
+</html>

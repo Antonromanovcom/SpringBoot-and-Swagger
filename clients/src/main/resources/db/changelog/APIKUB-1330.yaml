@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: d.kirilenko
+      changes:
+        - addColumn:
+            tableName: attachment
+            columns:
+              - column:
+                  name: verified
+                  type: boolean

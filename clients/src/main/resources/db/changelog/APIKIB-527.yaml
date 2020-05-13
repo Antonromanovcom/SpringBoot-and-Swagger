@@ -1,0 +1,11 @@
+databaseChangeLog:
+- changeSet:
+    id: APIKUB-527.yaml
+    author: ilya
+    changes:
+    - addColumn:
+        tableName: account_application
+        columns:
+        - column:
+            name: short_name
+            type: varchar(255)

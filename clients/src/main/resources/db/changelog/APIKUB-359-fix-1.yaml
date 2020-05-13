@@ -1,0 +1,14 @@
+databaseChangeLog:
+- changeSet:
+    id: APIKUB-354.yaml
+    author: ilya
+    changes:
+    - addColumn:
+        columns:
+        - column:
+            name: bad_supplier
+            type: BOOLEAN
+        - column:
+            name: affiliated_mass_address_count
+            type: BOOLEAN
+        tableName: company_kyc_scoring

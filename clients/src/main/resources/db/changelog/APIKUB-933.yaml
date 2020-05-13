@@ -1,0 +1,10 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ilya
+    changes:
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: update history_item set text = trim(' ' from trim(leading(trim(' ' from event_initiator) || ':') from text)) where history_item.item_type = 0

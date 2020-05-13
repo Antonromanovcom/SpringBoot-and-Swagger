@@ -1,0 +1,25 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ilya
+    changes:
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: ALTER TABLE attachment add column content_bytea bytea
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: UPDATE attachment SET content_bytea = lo_get(content)
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: ALTER TABLE attachment drop column content
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: ALTER TABLE attachment rename column content_bytea to content

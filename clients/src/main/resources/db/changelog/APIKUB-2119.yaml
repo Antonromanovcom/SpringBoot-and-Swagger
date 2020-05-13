@@ -1,0 +1,10 @@
+databaseChangeLog:
+  - changeSet:
+      id: APIKUB-2119
+      author: a.murzin
+      changes:
+        - sql:
+            dbms: postgresql
+            endDelimiter: \nGO
+            splitStatements: true
+            sql: ALTER TABLE account_application ADD ai_score float default 0;

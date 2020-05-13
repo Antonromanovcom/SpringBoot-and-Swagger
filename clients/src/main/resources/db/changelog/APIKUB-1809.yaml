@@ -1,0 +1,35 @@
+databaseChangeLog:
+- changeSet:
+    id: APIKUB-1810
+    author: a.murzin
+    changes:
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: CREATE INDEX IF NOT EXISTS status_history_item_app_id_idx ON public.status_history_item (app_id);
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: CREATE INDEX IF NOT EXISTS status_history_item_created_idx ON public.status_history_item (created_at);
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: CREATE INDEX IF NOT EXISTS status_history_item_status_idx ON public.status_history_item (current_status);
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: CREATE INDEX IF NOT EXISTS history_item_app_id_idx ON public.history_item (app_id);
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: CREATE INDEX IF NOT EXISTS history_item_created_idx ON public.history_item (created_at);
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: CREATE INDEX IF NOT EXISTS history_item_status_idx ON public.history_item (item_type);

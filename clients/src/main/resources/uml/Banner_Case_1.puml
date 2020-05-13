@@ -1,0 +1,19 @@
+@startuml
+actor User
+participant DBO
+participant Billing
+participant CRM
+participant MD_PROXY
+
+
+
+autonumber 1
+User -> DBO: Первый заход
+DBO -> CRM: GET Был ли показан баннер ранее?
+alt Был
+DBO -> CRM: что-=то еще
+else нет
+DBO -> CRM: POST сохранить timestamp показа
+end
+Billing-> CRM: Оплачено до такого-то...
+@enduml

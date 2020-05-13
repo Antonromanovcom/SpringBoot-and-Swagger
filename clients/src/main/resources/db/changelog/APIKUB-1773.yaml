@@ -1,0 +1,25 @@
+databaseChangeLog:
+- changeSet:
+    id: APIKUB-1773
+    author: a.murzin
+    changes:
+    - sql:
+          dbms: postgresql
+          endDelimiter: \nGO
+          splitStatements: true
+          sql: CREATE SEQUENCE history_item_id_seq;
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: ALTER TABLE history_item ALTER COLUMN id SET DEFAULT nextval('history_item_id_seq');
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: ALTER SEQUENCE history_item_id_seq INCREMENT 1 OWNED BY history_item.id;
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: select setval('"history_item_id_seq"'::regclass, (select MAX("id")+100 FROM "history_item"));

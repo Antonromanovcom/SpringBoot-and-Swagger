@@ -1,0 +1,10 @@
+databaseChangeLog:
+- changeSet:
+    id: APIKUB-2089
+    author: a.murzin
+    changes:
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: ALTER TABLE account_application ADD update_date_time timestamp;

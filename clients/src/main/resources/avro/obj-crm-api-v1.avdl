@@ -1,0 +1,33 @@
+@namespace("online.prostobank.clients.api.dto.avro.dbo")
+protocol Api {
+  record ChangeAccountStatus {
+  // Id пользователя
+    string userId;
+
+  // ИНН пользователя
+    string inn;
+
+  // Дата события
+    date timeEvent;
+
+  // Номер счета
+    string accountNumber;
+
+  // Статус счета
+    AccountStatus status;
+  }
+
+  enum AccountStatus {
+  // Резервирование счета
+    reservation,
+
+  // Закрытие счета
+    closure,
+
+  // Ожидание документов
+    wait_for_docs,
+
+  // Счёт открыт
+    open
+  }
+}

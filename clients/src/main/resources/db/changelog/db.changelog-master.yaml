@@ -1,0 +1,393 @@
+# YAML Template.
+# Документация, как оформлять изменения, лежит тут: http://www.liquibase.org/documentation/yaml_format.html
+databaseChangeLog:
+- changeSet:
+      id: initial
+      author: yv
+
+- changeSet:
+      id: okved_codes
+      author: yv
+      changes:
+      - addColumn:
+            tableName: account_application
+            columns:
+            - column:
+                  name: primary_codes
+                  type: varchar(511)
+            - column:
+                  name: secondary_codes
+                  type: varchar(511)
+- changeSet:
+      id: client_from_source
+      author: ilya
+      changes:
+      - addColumn:
+            tableName: account_application
+            columns:
+            - column:
+                  name: source
+                  type: varchar(100)
+
+- changeSet:
+      id: APIKUB-284
+      author: ilya
+      changes:
+      - sql:
+            dbms: postgresql
+            endDelimiter: \nGO
+            splitStatements: true
+            sql: insert into city (id, name) values (NEXTVAL('hibernate_sequence'), 'Новосибирск')
+      - sql:
+            dbms: postgresql
+            endDelimiter: \nGO
+            splitStatements: true
+            sql: insert into city (id, name) values (NEXTVAL('hibernate_sequence'), 'Екатеринбург')
+      - sql:
+            dbms: postgresql
+            endDelimiter: \nGO
+            splitStatements: true
+            sql: insert into city (id, name) values (NEXTVAL('hibernate_sequence'), 'Санкт-Петербург')
+
+- include:
+    file: db/changelog/APIKUB-335.yaml
+
+- include:
+    file: db/changelog/APIKUB-354.yaml
+
+- include:
+    file: db/changelog/APIKUB-359.yaml
+
+- include:
+    file: db/changelog/APIKUB-359-fix-1.yaml
+
+- include:
+    file: db/changelog/APIKUB-357.yaml
+
+- include:
+    file: db/changelog/APIKUB-405.yaml
+
+- include:
+    file: db/changelog/APIKUB-429.yaml
+
+- include:
+    file: db/changelog/APIKUB-361.yaml
+
+- include:
+    file: db/changelog/APIKUB-435.yaml
+
+- include:
+    file: db/changelog/APIKUB-378.yaml
+
+- include:
+    file: db/changelog/APIKUB-452.yaml
+
+- include:
+    file: db/changelog/APIKUB-459.yaml
+
+- include:
+    file: db/changelog/APIKUB-483.yaml
+
+- include:
+    file: db/changelog/APIKUB-512.yaml
+
+- include:
+    file: db/changelog/APIKUB-506.yaml
+
+- include:
+    file: db/changelog/APIKUB-520.yaml
+
+- include:
+    file: db/changelog/APIKUB-513-transition-stats.sql
+
+- include:
+    file: db/changelog/APIKUB-548.yaml
+
+- include:
+    file: db/changelog/APIKUB-552.yaml
+
+- include:
+    file: db/changelog/APIKUB-563.yaml
+
+- include:
+    file: db/changelog/APIKUB-515.yaml
+
+- include:
+    file: db/changelog/APIKUB-576.yaml
+
+- include:
+    file: db/changelog/APIKUB-572.yaml
+
+- include:
+    file: db/changelog/APIKUB-651.yaml
+
+- include:
+    file: db/changelog/APIKUB-642.yaml
+
+- include:
+    file: db/changelog/APIKUB-679.yaml
+
+- include:
+    file: db/changelog/APIKUB-695.yaml
+
+- include:
+    file: db/changelog/APIKUB-670.yaml
+
+- include:
+    file: db/changelog/APIKIB-527.yaml
+
+- include:
+    file: db/changelog/APIKUB-773.yaml
+
+- include:
+    file: db/changelog/APIKUB-828.yaml
+
+- include:
+    file: db/changelog/APIKUB-829.yaml
+
+- include:
+    file: db/changelog/APIKUB-933.yaml
+
+- include:
+    file: db/changelog/APIKUB-856.yaml
+
+- include:
+    file: db/changelog/APIKUB-950.yaml
+
+- include:
+    file: db/changelog/APIKUB-905.yaml
+
+- include:
+    file: db/changelog/APIKUB-1014.yaml
+
+- include:
+    file: db/changelog/APIKUB-366.yaml
+
+- include:
+    file: db/changelog/APIKUB-950.yaml
+
+- include:
+    file: db/changelog/APIKUB-643.yaml
+
+- include:
+    file: db/changelog/APIKUB-1090.yaml
+
+- include:
+    file: db/changelog/APIKUB-1014.yaml
+
+- include:
+    file: db/changelog/APIKUB-518.yaml
+
+- include:
+    file: db/changelog/APIKUB-373.yaml
+
+- include:
+    file: db/changelog/APIKUB-904.yaml
+
+- include:
+    file: db/changelog/APIKUB-1090.yaml
+
+- include:
+    file: db/changelog/APIKUB-270.yaml
+
+- include:
+    file: db/changelog/APIKUB-518_2.yaml
+
+- include:
+    file: db/changelog/APIKUB-1143.yaml
+
+- include:
+    file: db/changelog/APIKUB-1144.yaml
+
+- include:
+    file: db/changelog/APIKUB-262.yaml
+
+- include:
+    file: db/changelog/APIKUB-1336.yaml
+
+- include:
+    file: db/changelog/APIKUB-1339.yaml
+
+- include:
+    file: db/changelog/APIKUB-1360.yaml
+
+- include:
+    file: db/changelog/APIKUB-1330.yaml
+
+- include:
+    file: db/changelog/APIKUB-1177.yaml
+
+- include:
+    file: db/changelog/APIKUB-1435.yaml
+
+- include:
+    file: db/changelog/APIKUB-1257.yaml
+
+- include:
+    file: db/changelog/APIKUB-1257_fix.yaml
+
+- include:
+    file: db/changelog/APIKUB-1708_fix.yaml
+
+- include:
+    file: db/changelog/APIKUB-1441.yaml
+
+- include:
+    file: db/changelog/APIKUB-1690.yaml
+
+- include:
+    file: db/changelog/APIKUB-1773.yaml
+
+- include:
+    file: db/changelog/APIKUB-1809.yaml
+
+- include:
+    file: db/changelog/APIKUB-1869.yaml
+
+- include:
+    file: db/changelog/APIKUB-1706.yaml
+
+- include:
+    file: db/changelog/APIKUB-1970.yaml
+
+- include:
+    file: db/changelog/APIKUB-2075.yaml
+
+- include:
+    file: db/changelog/APIKUB-1483.yaml
+
+- include:
+    file: db/changelog/APIKUB-2089.yaml
+
+- include:
+    file: db/changelog/APIKUB-2102.yaml
+
+- include:
+    file: db/changelog/APIKUB-2114.yaml
+
+- include:
+    file: db/changelog/APIKUB-2119.yaml
+
+- include:
+    file: db/changelog/APIKUB-2139.yaml
+
+- include:
+    file: db/changelog/APIKUB-2138.yaml
+
+- include:
+    file: db/changelog/APIKUB-2163.yaml
+
+- include:
+    file: db/changelog/APIKUB-2128.yaml
+
+- include:
+    file: db/changelog/APIKUB-2156.yaml
+
+- include:
+    file: db/changelog/APIKUB-2147.yaml
+
+- include:
+    file: db/changelog/APIKUB-1608.yaml
+
+- include:
+    file: db/changelog/APIKUB-2220.yaml
+
+- changeSet:
+    id: APIKUB-2232
+    author: a.romanov
+    changes:
+      - addColumn:
+          tableName: business_tariff
+          columns:
+            - column:
+                name: archive
+                type: boolean
+
+- changeSet:
+    id: APIKUB-2232-not-null
+    author: a.romanov
+    changes:
+      - addNotNullConstraint:
+          tableName: business_tariff
+          columnDataType: boolean
+          columnName: archive
+          constraintName: const_name
+          defaultNullValue: false
+          validate: true
+- include:
+    file: db/changelog/APIKUB-1048.yaml
+
+- include:
+    file: db/changelog/APIKUB-2261.yaml
+
+- changeSet:
+    id: APIKUB-2261-change-tariff-type
+    author: a.romanov
+    changes:
+        - modifyDataType:
+            columnName: tariff_id
+            newDataType: BIGINT
+            tableName: payment_order_details
+
+- changeSet:
+    id: APIKUB-2261-foreign-key-for-tariff
+    author: a.romanov
+    changes:
+      - addForeignKeyConstraint:
+          baseColumnNames: tariff_id
+          baseTableName: payment_order_details
+          constraintName: fk_tariff_id
+          deferrable: false
+          onDelete: NO ACTION
+          onUpdate: NO ACTION
+          referencedColumnNames: id
+          referencedTableName: business_tariff
+          validate: true
+
+- changeSet:
+    id: APIKUB-2261-add-primary-key
+    author: a.romanov
+    changes:
+      - addPrimaryKey:
+          columnNames: id
+          constraintName: payment_order_detail_id_pk
+          tableName: payment_order_details
+          validate: true
+
+- changeSet:
+    id: APIKUB-2261-rename-tariff-column
+    author: a.romanov
+    changes:
+      - renameColumn:
+          newColumnName: business_tariff_id
+          oldColumnName: tariff_id
+          tableName: payment_order_details
+
+- changeSet:
+    id: APIKUB-2263
+    author: a.romanov
+    changes:
+      - addColumn:
+          tableName: business_tariff
+          columns:
+            - column:
+                name: staff
+                type: boolean
+            - column:
+                name: taxation_system
+                type: jsonb
+            - column:
+                name: business_form
+                type: jsonb
+
+- changeSet:
+    id: APIKUB-2263-staff-not-null
+    author: a.romanov
+    changes:
+      - addNotNullConstraint:
+          tableName: business_tariff
+          columnDataType: boolean
+          columnName: staff
+          constraintName: staff_const_name
+          defaultNullValue: false
+          validate: true

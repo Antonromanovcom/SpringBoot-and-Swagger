@@ -1,0 +1,11 @@
+databaseChangeLog:
+    - changeSet:
+          id: APIKUB-1048
+          author: anton
+          changes:
+              - addColumn:
+                    tableName: client_business_tariff
+                    columns:
+                        - column:
+                              name: first_entrance
+                              type: TIMESTAMP

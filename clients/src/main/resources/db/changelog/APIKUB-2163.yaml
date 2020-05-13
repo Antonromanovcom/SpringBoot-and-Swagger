@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: APIKUB-2163
+      author: a.murzin
+      changes:
+        - sql:
+            dbms: postgresql
+            endDelimiter: \nGO
+            splitStatements: true
+            sql: update account_application set client_state='NEW_CLIENT' WHERE client_state IS NULL;
+        - sql:
+            dbms: postgresql
+            endDelimiter: \nGO
+            splitStatements: true
+            sql: alter table account_application alter column client_state set not null;
+        - sql:
+            dbms: postgresql
+            endDelimiter: \nGO
+            splitStatements: true
+            sql: alter table account_application alter column client_state set default 'NEW_CLIENT';

@@ -1,0 +1,12 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Nick
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            relativeToChangelogFile: true
+            stripComments: true
+            path: ./sql/email_table.sql
+            splitStatements: true

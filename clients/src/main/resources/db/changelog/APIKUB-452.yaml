@@ -1,0 +1,9 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ilya
+    changes:
+    - modifyDataType:
+        columnName: text
+        newDataType: text
+        tableName: history_item

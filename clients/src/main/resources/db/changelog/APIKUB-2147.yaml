@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: m.romanenkov
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            relativeToChangelogFile: true
+            stripComments: true
+            path: ./sql/update_manager_city.sql
+            splitStatements: true
+  - changeSet:
+      id: 2
+      author: m.romanenkov
+      changes:
+        - sql:
+            dbms: postgresql
+            endDelimiter: \nGO
+            splitStatements: true
+            sql: update manager set city_id = (select id from city where city.name like '%еизвестно') where city_id is null;

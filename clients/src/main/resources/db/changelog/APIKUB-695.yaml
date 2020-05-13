@@ -1,0 +1,9 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ilya
+    changes:
+    - modifyDataType:
+        columnName: kontur_error_text
+        newDataType: varchar(2000)
+        tableName: account_application

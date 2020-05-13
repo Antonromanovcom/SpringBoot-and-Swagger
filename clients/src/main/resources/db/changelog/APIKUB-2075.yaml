@@ -1,0 +1,10 @@
+databaseChangeLog:
+- changeSet:
+    id: APIKUB-2075
+    author: a.murzin
+    changes:
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: alter table account_application alter column client_email set default '';

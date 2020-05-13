@@ -1,0 +1,30 @@
+databaseChangeLog:
+- changeSet:
+    id: 1
+    author: ilya
+    changes:
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: insert into city (id, name) values (NEXTVAL('hibernate_sequence'), 'Ростов-на-Дону')
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: insert into city (id, name) values (NEXTVAL('hibernate_sequence'), 'Красноярск')
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: insert into city (id, name) values (NEXTVAL('hibernate_sequence'), 'Нижний Новгород')
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: insert into city (id, name) values (NEXTVAL('hibernate_sequence'), 'Уфа')
+    - sql:
+        dbms: postgresql
+        endDelimiter: \nGO
+        splitStatements: true
+        sql: insert into city (id, name) values (NEXTVAL('hibernate_sequence'), 'Самара')

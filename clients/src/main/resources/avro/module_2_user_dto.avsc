@@ -1,0 +1,37 @@
+{
+  "type" : "record",
+  "name" : "UserDto",
+  "namespace" : "online.prostobank.clients.api.dto.avro.module_push",
+  "fields" : [ {
+    "name" : "clientAccountNumber",
+    "type" : "string"
+  }, {
+    "name" : "firstName",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "lastName",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "middleName",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "partner",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "timeZone",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "deliveryFrom",
+    "type" : [ "null", "string" ],
+    "default" : null
+  }, {
+    "name" : "deliveryTo",
+    "type" : [ "null", "string" ],
+    "default" : null
+  } ]
+}

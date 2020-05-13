@@ -1,0 +1,14 @@
+databaseChangeLog:
+- changeSet:
+    id: APIKUB-354.yaml
+    author: ilya
+    changes:
+    - addColumn:
+        tableName: account_application
+        columns:
+        - column:
+            name: black_listed_codes
+            type: varchar(511)
+        - column:
+            name: transport_codes
+            type: varchar(511)

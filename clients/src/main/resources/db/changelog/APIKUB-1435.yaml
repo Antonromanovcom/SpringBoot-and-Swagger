@@ -1,0 +1,37 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: m.romanenkov
+      changes:
+        - addColumn:
+            tableName: account_application
+            columns:
+              - column:
+                  name: keycloak_id
+                  type: varchar(255)
+  - changeSet:
+      id: 2
+      author: m.romanenkov
+      changes:
+        - sqlFile:
+            dbms: postgresql
+            encoding: utf8
+            relativeToChangelogFile: true
+            stripComments: true
+            path: ./sql/client_keycloak.sql
+            splitStatements: true
+  - changeSet:
+      id: 3
+      author: m.romanenkov
+      changes:
+        - dropColumn:
+            columnName: keycloak_id
+            tableName: account_application
+  - changeSet:
+      id: 4
+      author: m.romanenkov
+      changes:
+        - addUniqueConstraint:
+            - columnNames: keycloak_id
+            - constraintName: keycloak_id_uc
+            - tableName: client_keycloak

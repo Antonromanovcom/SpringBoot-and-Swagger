@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: m.romanenkov
+      changes:
+        - addColumn:
+            tableName: attachment
+            columns:
+              - column:
+                  name: quality
+                  type: boolean
