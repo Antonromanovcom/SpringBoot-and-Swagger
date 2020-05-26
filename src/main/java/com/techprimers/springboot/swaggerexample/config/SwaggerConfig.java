@@ -29,7 +29,7 @@ public class SwaggerConfig {
     private ApiInfo metaInfo() {
 
         ApiInfo apiInfo = new ApiInfo(
-                "Spring Boot Swagger Example API",
+                "Nastya - I love you!",
                 "Spring Boot Swagger Example API for Youtube",
                 "1.0",
                 "Terms of Service",
