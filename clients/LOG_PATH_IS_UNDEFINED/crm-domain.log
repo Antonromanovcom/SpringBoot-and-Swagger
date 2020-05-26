@@ -1,6 +1,0 @@
-2020-05-13 19:45:40.110 [main] INFO  o.p.c.d.s.c.ClientStateMachineConfigurationSpringBootTest.logStarting - Starting ClientStateMachineConfigurationSpringBootTest on DESKTOP-48J0LAK with PID 8752 (started by Anton in C:\GIT\crm swagger\clients) 
-2020-05-13 19:45:40.126 [main] DEBUG o.p.c.d.s.c.ClientStateMachineConfigurationSpringBootTest.logStarting - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE 
-2020-05-13 19:45:40.126 [main] INFO  o.p.c.d.s.c.ClientStateMachineConfigurationSpringBootTest.logStartupProfileInfo - No active profile set, falling back to default profiles: default 
-2020-05-13 19:46:45.720 [main] INFO  o.p.c.d.s.c.ClientStateMachineConfigurationSpringBootTest.logStarting - Starting ClientStateMachineConfigurationSpringBootTest on DESKTOP-48J0LAK with PID 8752 (started by Anton in C:\GIT\crm swagger\clients) 
-2020-05-13 19:46:45.735 [main] DEBUG o.p.c.d.s.c.ClientStateMachineConfigurationSpringBootTest.logStarting - Running with Spring Boot v2.2.1.RELEASE, Spring v5.2.1.RELEASE 
-2020-05-13 19:46:45.735 [main] INFO  o.p.c.d.s.c.ClientStateMachineConfigurationSpringBootTest.logStartupProfileInfo - No active profile set, falling back to default profiles: default 
